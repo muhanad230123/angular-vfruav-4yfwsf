@@ -2,7 +2,9 @@
 <h3>Products</h3>
 <ul>
   <li *ngFor="let product of products">
-    {{ product.product_name }} - {{ product.price }}
+    Product Name: {{ product.product_name }} <br>
+    Price: {{ product.price }} <br>
+    Description: {{ product.description }}
   </li>
 </ul>
 
