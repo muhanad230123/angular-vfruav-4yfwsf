@@ -1,7 +1,10 @@
 <h2>Products</h2>
-<h3>Product</h3>
-
-<p></p>
+<h3>Products</h3>
+<ul>
+  <li *ngFor="let product of products">
+    {{ product.product_name }} - {{ product.price }}
+  </li>
+</ul>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
