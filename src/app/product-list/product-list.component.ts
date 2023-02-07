@@ -8,13 +8,6 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css'],
 })
 
-export interface Product{
-product_id:number;
-roduct_name:string;
-price:number;
-description:string;
-}
-
 export class ProductListComponent {
   products = [
     {
