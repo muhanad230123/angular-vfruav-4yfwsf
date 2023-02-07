@@ -1,12 +1,33 @@
-<h2>Products</h2>
-<h3>Products</h3>
-<ul>
+<h2>Actors</h2>
+
+<!-- <ul>
   <li *ngFor="let product of products">
     Product Name: {{ product.product_name }} <br>
     Price: {{ product.price }} <br>
     Description: {{ product.description }}
   </li>
-</ul>
+</ul> -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Actor ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let actor of sakila">
+      <td>{{actor.Actor_id}}</td>
+      <td>{{actor.First_name}}</td>
+      <td>{{actor.Last_name}}</td>
+      <td>{{actor.Email}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

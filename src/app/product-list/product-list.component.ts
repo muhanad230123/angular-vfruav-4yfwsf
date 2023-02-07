@@ -33,6 +33,39 @@ export class ProductListComponent {
     },
   ];
 
+  sakila = [
+    {
+      Actor_id: 1,
+      First_name: 'Mary',
+      Last_name: 'Thomson',
+      Email:'Mary.thomson@gmail.com',
+    },
+    {
+      Actor_id: 2,
+      First_name: 'John',
+      Last_name: 'Doe',
+      Email:'johndoe@hotmail.com',
+    },
+    {
+      Actor_id: 3,
+      First_name: 'Jane',
+      Last_name: 'Smith',
+      Email:'jane.smith@yahoo.com',
+    },
+    {
+      Actor_id: 4,
+      First_name: 'Robert',
+      Last_name: 'Brown',
+      Email:'robert.brown@gmail.com',
+    },
+    {
+      Actor_id: 5,
+      First_name: 'Elizabeth',
+      Last_name: 'Wilson',
+      Email:'elizabeth.wilson@outlook.com',
+    }
+  ];
+
   share() {
     window.alert('The product has been shared!');
   }
