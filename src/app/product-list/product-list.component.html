@@ -14,18 +14,25 @@
       <th>Actor ID</th>
       <th>First Name</th>
       <th>Last Name</th>
-      <th>Email</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Offer</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let actor of sakila">
-      <td>{{actor.Actor_id}}</td>
-      <td>{{actor.First_name}}</td>
-      <td>{{actor.Last_name}}</td>
-      <td>{{actor.Email}}</td>
+    <tr *ngFor="let actor of actorData">
+      <td>{{actor.actorId}}</td>
+      <td>{{actor.firstName}}</td>
+      <td>{{actor.lastName}}</td>
+      <td>{{actor.gender}}</td>
+      <td>{{actor.age}}</td>
+      <td>  
+        <app-offer [actorAge]="actor.age"></app-offer></td>
     </tr>
   </tbody>
 </table>
+
+  
 
 
 

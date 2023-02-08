@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-
+import { DSSActors } from '../DSSActors';
 import { products } from '../products';
+import { ApiServiceService } from '../Services';
+import { offercomponent } from '../offercomponent';
 
 @Component({
   selector: 'app-product-list',
@@ -9,62 +11,17 @@ import { products } from '../products';
 })
 
 export class ProductListComponent {
-  products = [
-    {
-      product_id: 1,
-      product_name: 'Apple iPhone',
-      price: 999.99,
-      description:
-        'The latest iPhone with cutting-edge technology and sleek design.',
-    },
-    {
-      product_id: 2,
-      product_name: 'Samsung Galaxy',
-      price: 899.99,
-      description:
-        'A high-performance smartphone from Samsung with a large display and long battery life.',
-    },
-    {
-      product_id: 3,
-      product_name: 'Google Pixel',
-      price: 799.99,
-      description:
-        'A premium smartphone from Google with an outstanding camera and intuitive software.',
-    },
-  ];
+  actorData:any;
+  constructor(private _apiservice:ApiServiceService){}
+  ngOnInit(){
+    this._apiservice.getdata().subscribe(res=>{
+      this.actorData=res;
+    })
+  }
 
-  sakila = [
-    {
-      Actor_id: 1,
-      First_name: 'Mary',
-      Last_name: 'Thomson',
-      Email:'Mary.thomson@gmail.com',
-    },
-    {
-      Actor_id: 2,
-      First_name: 'John',
-      Last_name: 'Doe',
-      Email:'johndoe@hotmail.com',
-    },
-    {
-      Actor_id: 3,
-      First_name: 'Jane',
-      Last_name: 'Smith',
-      Email:'jane.smith@yahoo.com',
-    },
-    {
-      Actor_id: 4,
-      First_name: 'Robert',
-      Last_name: 'Brown',
-      Email:'robert.brown@gmail.com',
-    },
-    {
-      Actor_id: 5,
-      First_name: 'Elizabeth',
-      Last_name: 'Wilson',
-      Email:'elizabeth.wilson@outlook.com',
-    }
-  ];
+
+  products = products;
+  DSSActors = DSSActors;
 
   share() {
     window.alert('The product has been shared!');
