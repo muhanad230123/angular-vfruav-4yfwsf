@@ -1,8 +1,24 @@
 <app-top-bar></app-top-bar>
+<ul>
+  <li><a routerLink="/home">home</a></li>
+  <li><a routerLink="/product-list">product-list</a></li>
+  
+</ul>
+<ul>
+  <li><a [routerLink]="['/']">home</a></li>
+  <li><a [routerLink]="['/home']">home</a></li>
+  <li><a [routerLink]="['/product-list']">product-list</a></li>
+</ul>
 
-<div class="container">
+<router-outlet></router-outlet>
+
+
+
+
+<!--<div class="container">
   <router-outlet></router-outlet>
-</div>
+</div>-->
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

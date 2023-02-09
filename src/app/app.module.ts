@@ -7,25 +7,46 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { offercomponent } from './offercomponent';
+import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import {AppRoutingModule} from './app-routing.module';
+
+// const routes: Routes = [
+//   { path: 'home', component: HomeComponent },
+//   { path: 'product-list', component: ProductListComponent },
+//   { path: 'home', redirectTo: '/home', pathMatch: 'full' },
+//   { path: '**', redirectTo: '',component: HomeComponent },
+// ];
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  // { path: 'home', component: HomeComponent },
+  { path: 'product-list', component: ProductListComponent },
+  // { path: 'home', redirectTo: '/home', pathMatch: 'full' },
+  // { path: '**', redirectTo: '',component: HomeComponent },
+  {path : '**', component:HomeComponent}
+];
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
-    ])
+
+    RouterModule.forRoot(routes)
   ],
+     
   declarations: [
     AppComponent,
     TopBarComponent,
     offercomponent,
+    HomeComponent,
     ProductListComponent
   ],
   bootstrap: [
     AppComponent
-  ]
+  ],
+  exports: [RouterModule]
 })
 export class AppModule { }
 

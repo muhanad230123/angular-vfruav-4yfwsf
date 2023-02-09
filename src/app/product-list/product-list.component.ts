@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { DSSActors } from '../DSSActors';
 import { products } from '../products';
-import { ApiServiceService } from '../Services';
-import { offercomponent } from '../offercomponent';
+import { APi_Service } from '../Services';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-product-list',
@@ -10,9 +12,10 @@ import { offercomponent } from '../offercomponent';
   styleUrls: ['./product-list.component.css'],
 })
 
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   actorData:any;
-  constructor(private _apiservice:ApiServiceService){}
+  
+  constructor(private _apiservice:APi_Service,private router: Router){}
   ngOnInit(){
     this._apiservice.getdata().subscribe(res=>{
       this.actorData=res;
@@ -25,6 +28,11 @@ export class ProductListComponent {
 
   share() {
     window.alert('The product has been shared!');
+  }
+
+  
+  goToHome() {
+    this.router.navigate(['/home']);
   }
 }
 
