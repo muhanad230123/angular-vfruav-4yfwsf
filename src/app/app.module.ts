@@ -10,6 +10,7 @@ import { offercomponent } from './offercomponent';
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from './app-routing.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 // const routes: Routes = [
 //   { path: 'home', component: HomeComponent },
@@ -32,7 +33,7 @@ const routes: Routes = [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-
+    NgxPaginationModule,
     RouterModule.forRoot(routes)
   ],
      

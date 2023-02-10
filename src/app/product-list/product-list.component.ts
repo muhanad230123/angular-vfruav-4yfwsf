@@ -3,6 +3,7 @@ import { DSSActors } from '../DSSActors';
 import { products } from '../products';
 import { APi_Service } from '../Services';
 import { Router } from '@angular/router';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -14,7 +15,7 @@ import { Router } from '@angular/router';
 
 export class ProductListComponent implements OnInit {
   actorData:any;
-  
+  p: number = 1; // setting the initial page number to 1
   constructor(private _apiservice:APi_Service,private router: Router){}
   ngOnInit(){
     this._apiservice.getdata().subscribe(res=>{
@@ -22,9 +23,6 @@ export class ProductListComponent implements OnInit {
     })
   }
 
-
-  products = products;
-  DSSActors = DSSActors;
 
   share() {
     window.alert('The product has been shared!');
