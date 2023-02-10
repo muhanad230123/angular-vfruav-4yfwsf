@@ -15,7 +15,8 @@
       <th>Last Name</th>
       <th>Gender</th>
       <th>Age</th>
-      <th>Offer</th>
+     <!-- <th>Offer</th>-->
+      <th>Modify Actor Details</th>
     </tr>
   </thead>
   <tbody>
@@ -25,9 +26,13 @@
       <td>{{actor.lastName}}</td>
       <td>{{actor.gender}}</td>
       <td>{{actor.age}}</td>
-      <td>  
+      <!--<td>  
         <app-offer [actorAge]="actor.age"></app-offer></td>
-    </tr>
+    </tr>-->
+    <td>
+      <button class="edit-btn">Edit</button>
+      <button class="delete-btn">Delete</button>
+    </td>
   </tbody>
 </table>
 

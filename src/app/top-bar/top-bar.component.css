@@ -1,7 +1,31 @@
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
+a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  h1 {
+    margin: 0;
+    padding: 10px 20px;
+    display: inline-block;
+    color: #fff;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-align: center;
+  }
