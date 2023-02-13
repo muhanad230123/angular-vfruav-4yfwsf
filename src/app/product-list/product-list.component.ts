@@ -1,11 +1,21 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,NgModule} from '@angular/core';
 import { DSSActors } from '../DSSActors';
 import { products } from '../products';
 import { APi_Service } from '../Services';
 import { Router } from '@angular/router';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
 
+export interface Actor {
+  actorId: number;
+  firstName: string;
+  lastName: string;
+  gender: string;
+  age: number;
+}
 
 @Component({
   selector: 'app-product-list',
@@ -32,7 +42,17 @@ export class ProductListComponent implements OnInit {
   goToHome() {
     this.router.navigate(['/home']);
   }
+  onEdit(item:any){
+    item.isEdit=true;
+  }
+
+  updateActor(actorId: number){
+    this.router.navigate(['update-actor', actorId]);
+  }
+
 }
+
+
 
 /*
 Copyright Google LLC. All Rights Reserved.

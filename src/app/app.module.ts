@@ -11,6 +11,10 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from './app-routing.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { UpdateActorComponent } from './update-actor/update-actor.component';
+import { APi_Service } from './Services';
 
 // const routes: Routes = [
 //   { path: 'home', component: HomeComponent },
@@ -23,6 +27,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   // { path: 'home', component: HomeComponent },
   { path: 'product-list', component: ProductListComponent },
+  { path: 'update-actor/:actorId', component: UpdateActorComponent },
   // { path: 'home', redirectTo: '/home', pathMatch: 'full' },
   // { path: '**', redirectTo: '',component: HomeComponent },
   {path : '**', component:HomeComponent}
@@ -34,6 +39,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     NgxPaginationModule,
+    FormsModule,
+    CommonModule,
     RouterModule.forRoot(routes)
   ],
      
@@ -42,8 +49,10 @@ const routes: Routes = [
     TopBarComponent,
     offercomponent,
     HomeComponent,
-    ProductListComponent
+    ProductListComponent,
+    UpdateActorComponent
   ],
+  providers:[APi_Service],
   bootstrap: [
     AppComponent
   ],

@@ -1,12 +1,3 @@
-<h2>Actors</h2>
-
-<!-- <ul>
-  <li *ngFor="let product of products">
-    Product Name: {{ product.product_name }} <br>
-    Price: {{ product.price }} <br>
-    Description: {{ product.description }}
-  </li>
-</ul> -->
 <table>
   <thead>
     <tr>
@@ -22,17 +13,17 @@
   <tbody>
     <tr *ngFor="let actor of actorData | paginate: { itemsPerPage: 20, currentPage: p}">
       <td>{{actor.actorId}}</td>
-      <td>{{actor.firstName}}</td>
-      <td>{{actor.lastName}}</td>
-      <td>{{actor.gender}}</td>
-      <td>{{actor.age}}</td>
-      <!--<td>  
-        <app-offer [actorAge]="actor.age"></app-offer></td>
-    </tr>-->
-    <td>
-      <button class="edit-btn">Edit</button>
-      <button class="delete-btn">Delete</button>
-    </td>
+      <ng-container>
+        <td>{{actor.firstName}}</td>
+        <td>{{actor.lastName}}</td>
+        <td>{{actor.gender}}</td>
+        <td>{{actor.age}}</td>
+      </ng-container>
+      <td>
+        <button  class="btn btn-success" (click)=updateActor(actor.actorId) >Edit</button>
+        <button class="delete-btn">Delete</button>
+      </td>
+    </tr>
   </tbody>
 </table>
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
